@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #091126;
+    --text-color: #fff;
+    --main-color: #00ffee;
+    --pink-color: #ff0185;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Syne", sans-serif;
+    background-image: linear-gradient(145deg, var(--second-bg-color), skyblue);
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact{
+    height: 70vh;
+    width: 90%; /* Adjusted width for responsiveness */
+    max-width: 900px; /* Added maximum width */
+    border-radius: 2rem;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 0.5rem var(--main-color);
+    flex-wrap: wrap; /* Added to make children wrap */
+}
+.map, .form{
+    width: 100%; /* Adjusted width for responsiveness */
+    height: 50%; /* Adjusted height for responsiveness */
+}
+.map iframe{
+    width: 100%;
+    height: 100%;
+}
+.form{
+    position: relative;
+    background: var(--second-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.form::before{
+    display: none; /* Removed before pseudo-element for responsiveness */
+}
+.form h1{
+    color: #fff;
+    font: 1.8rem 500;
+    padding: 0 2rem;
+    user-select: none;
+}
+.form form{
+    padding: 0 2rem;
+}
+.form input, .form textarea{
+    width: 100%;
+    padding: 1rem;
+    border: 0.08rem solid var(--main-color);
+    border-radius: 2rem;
+    background-color: unset;
+    color: var(--main-color);
+}
+.form input:not(:first-child), .form textarea, .form button{
+    margin-top: 0.8rem;
+}
+.form textarea{
+    height: 6rem;
+    resize: none;
+}
+.form button{
+    background: var(--main-color);
+    padding: 0.5rem 1.6rem;
+    color: #080808;
+    border: 0;
+    border-radius: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .contact{
+        width: 70vw; /* Adjusted width for larger screens */
+        height: 70vh; /* Adjusted height for larger screens */
+    }
+    .map, .form {
+        width: 50%; /* 50% width for both map and form */
+        height: 100%; /* Full height for both map and form */
+    }
+    .form h1{
+        font: 1.8rem 500; /* Reset font size for larger screens */
+    }
+}
+@media only screen and (max-width: 768px) {
+    .contact{
+        width: 70vw; /* Adjusted width for larger screens */
+        height: 70vh; /* Adjusted height for larger screens */
+    }
+    .map{
+        display: none;
+    }
+    .form {
+        width: 100%; /* 50% width for both map and form */
+        height: 100%; /* Full height for both map and form */
+    }
+    .form h1{
+        font: 1.8rem 500; /* Reset font size for larger screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .form{
+        height: 100%;
+    }
+    .map{
+        display: none;
+    }
+    .form h1{
+        font-size: 1.3rem; /* Further reduce font size for smaller screens */
+    }
+    .form input, .form textarea{
+        font-size: 0.9rem; /* Further reduce font size for smaller screens */
+    }
+}
